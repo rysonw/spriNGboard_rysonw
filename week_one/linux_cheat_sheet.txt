@@ -1,0 +1,53 @@
+
+tab = autocomplete
+cd = change dir
+ls = list or "let's see"
+ls -a = list all (files that start with a dot are hidden by default)
+/ is the root dir
+/home/evan/junk (no spaces when cd)
+every dir/file can be described by its path from root dir
+. = cd   (./)
+.. = parent dir
+mkdir = make dir (in current path unless specified otherwise) 
+mkdir /p = make new dir if need be
+cd ../../ = up 2 parents
+touch = create empty file
+ls -l = long format, more detail (size, time, creator, writers)
+ls -la & ls -l -a = list all with detail, can usually combine 'flags'
+ls -lart = list all with detail in rt- reverse time modified
+chmod = change permissions
+~ = home dir
+ln -s = symbolic link
+prompt should show true dir with sym links
+cat = show text in file
+cat > = add text to file
+rm =  remove/delete
+cp = copy
+echo = print text
+echo (text) > (file) = redir text to a file
+mv = move
+pwd = present working dir
+pipe = | (redirects the output of one cmd and uses it as an input for a different cmd)
+grep = filter (find all of this specific text)
+grep -V = filter out (show all without this specific text)
+egrep = extended grep
+grep 'w|some' = find this specific text (w or some)
+grep (text) * = print files and text where that specific text is found
+grep is case sensitive
+grep -i removes case sensitivity 
+grep --help & man grep = show how to use grep
+
+xargs
+rm -r -f
+rm -rf can be dangerous!
+sudo
+
+sleep (# of secs) = delay command
+time = time a command
+time sleep 2 = shows sleep 2 took 2 secs to run
+vim (file) = stronger editor for file
+vim cheatsheet in discord
+every unix system has vim, which you can configure to your liking
+:q to exit vim
+when in tmux: to exit: press ctrl+b and then d (detach) = exits tmux to normal terminal
+For tmux, any attempt to communicate directly to tmux involves typing Ctrl-b (the 'prefix key')

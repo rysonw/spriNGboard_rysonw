@@ -18,7 +18,7 @@
       * fold -w 5 -s words_alpha.txt
    * stores the result in a file
       * … > results.txt
-   * RESULT: dos2unix words_alpha.txt && grep -E '\bi[a-z]{5}\b' words_alpha.txt | sed -i 's/intern/Ryso/g; s/z/-/g' words_alpha.txt | fold -w 5 -s > results.txt
+   * RESULT: dos2unix words_alpha.txt && grep -E '\bi[a-z]{5}\b' words_alpha.txt | sed -i 's/intern/Ryson/g; s/z/-/g' words_alpha.txt | fold -w 5 -s > results.txt
 
 
 * find all .xml files under /usr/ that don’t contain a number, “-” or “t”

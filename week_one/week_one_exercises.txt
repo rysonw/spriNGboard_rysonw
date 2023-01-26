@@ -1,0 +1,66 @@
+﻿Unix vs DOS Text Files:
+* DOS stands for Disk Operating System
+* The main difference I noticed is how the lines are terminated in their respective file version
+   * Unix uses a new line feed to indicate the end of a line
+   * DOS uses a combo of a line feed with a carriage return to end a line
+
+
+* Create a 1-line unix command that: (Using pipes, I can link all these commands together)
+   * converts the original file from dos to Unix format
+      * dos2unix words_alpha.txt
+   * finds all 6-letter words starting with “i”
+      * grep -E ‘\bi[a-z]{5}\b’ words_alpha.txt
+   * replaces the word “intern” with your name
+      * sed -i ‘s/intern/Ryso’ words_alpha.txt
+   * replaces all occurrences of “z” with “-”
+      * sed -i ‘s/z/-’ words_alpha.txt
+   * arranges the words 5 per line
+      * fold -w 5 -s words_alpha.txt
+   * stores the result in a file
+      * … > results.txt
+   * RESULT: dos2unix words_alpha.txt && grep -E '\bi[a-z]{5}\b' words_alpha.txt | sed -i 's/intern/Ryso/g; s/z/-/g' words_alpha.txt | fold -w 5 -s > results.txt
+
+
+* find all .xml files under /usr/ that don’t contain a number, “-” or “t”
+○ again, use a 1-liner
+
+
+   ● modify your ~/.vimrc file to do something new
+○ describe your change in a text file and upload it to your repo
+
+
+   ● modify your ~/.tmux.conf file to do something new
+○ describe your change in a text file and upload it to your repo
+
+
+   ● practice using vim
+○ working with multiple files
+○ quickly moving around
+○ quick substitutions
+○ changing modes
+○ work through some tutorials
+
+
+   ● practice using tmux
+○ creating windows and panes
+○ moving around
+○ copy and paste
+○ etc.
+
+
+   ● practice linux basics
+○ moving around
+○ creating / modifying / moving / deleting files and directories
+* ○ finding files
+○ searching text
+○ text manipulations
+○ pipes and redirects
+○ etc.
+
+
+   ● practice git/GitHub basics
+○ adding/commiting files
+○ checking status
+○ clone, push
+○ undoing the last commit
+○ etc.

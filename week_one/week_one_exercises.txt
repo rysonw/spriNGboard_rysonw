@@ -11,7 +11,7 @@
    * finds all 6-letter words starting with “i”
       * grep -E ‘\bi[a-z]{5}\b’ words_alpha.txt
    * replaces the word “intern” with your name
-      * sed -i ‘s/intern/Ryso’ words_alpha.txt
+      * sed -i ‘s/intern/Ryson’ words_alpha.txt
    * replaces all occurrences of “z” with “-”
       * sed -i ‘s/z/-’ words_alpha.txt
    * arranges the words 5 per line

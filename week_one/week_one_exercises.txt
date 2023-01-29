@@ -22,45 +22,21 @@
 
 
 * find all .xml files under /usr/ that don’t contain a number, “-” or “t”
-○ again, use a 1-liner
+  * Does not contain a number, “-” or “t”
+      * ! -exec grep -q "[0-9-t]" {}
+   ○ RESULT: find /usr/ -name "*.xml" ! -exec grep -q "[0-9-t]" {} \; -print
+
+● modify your ~/.vimrc file to do something new
+   ○ describe your change in a text file and upload it to your repo
+         Changed the color scheme to a desert color: colorscheme desert
 
 
-   ● modify your ~/.vimrc file to do something new
-○ describe your change in a text file and upload it to your repo
+
+● modify your ~/.tmux.conf file to do something new
+   ○ describe your change in a text file and upload it to your repo
+         Enabled mouse support for everything: setw -g mouse on
+         Changed the color scheme: set-option -g status-bg colour12
 
 
-   ● modify your ~/.tmux.conf file to do something new
-○ describe your change in a text file and upload it to your repo
 
 
-   ● practice using vim
-○ working with multiple files
-○ quickly moving around
-○ quick substitutions
-○ changing modes
-○ work through some tutorials
-
-
-   ● practice using tmux
-○ creating windows and panes
-○ moving around
-○ copy and paste
-○ etc.
-
-
-   ● practice linux basics
-○ moving around
-○ creating / modifying / moving / deleting files and directories
-* ○ finding files
-○ searching text
-○ text manipulations
-○ pipes and redirects
-○ etc.
-
-
-   ● practice git/GitHub basics
-○ adding/commiting files
-○ checking status
-○ clone, push
-○ undoing the last commit
-○ etc.

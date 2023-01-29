@@ -30,13 +30,7 @@
    ○ describe your change in a text file and upload it to your repo
          Changed the color scheme to a desert color: colorscheme desert
 
-
-
 ● modify your ~/.tmux.conf file to do something new
    ○ describe your change in a text file and upload it to your repo
          Enabled mouse support for everything: setw -g mouse on
          Changed the color scheme: set-option -g status-bg colour12
-
-
-
-

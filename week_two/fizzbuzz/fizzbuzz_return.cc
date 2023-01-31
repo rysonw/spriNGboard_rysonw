@@ -1,20 +1,34 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-////////////////////////////////
-// ADD FIZZBUZZ FUNCTION HERE //
-////////////////////////////////
+string fizzbuzz (int input) {
+  if (input % 3 == 0 and input % 5 == 0) {
+    return "fizzbuzz";
+  }
+
+  else if (input % 3 == 0) {
+    return "fizz";
+  }
+
+  else if (input % 5 == 0) {
+    return "buzz";
+  }
+
+  else {
+    std::string s = std::to_string(input);
+    return s;
+  }
+}
 
 int main ()
 {
   for (int n=1; n<=50; ++n)
   {
-    ////////////////////////////////////////
-    // ADD CODE TO CALL FIZZBUZZ FUNCTION //
-    // AND PRINT THE RETURNED VALUE HERE  //
-    ////////////////////////////////////////
-
+    fizzbuzz(n)
   }
+
+  return 0;
 }
 

@@ -15,6 +15,10 @@ int fib(int N)
       return 0;
     }
 
+    if (N == 1) {
+      return 0;
+    }
+
     for (int i = 2; i <= N; i++) {
       sum = prevNum + currNum;
       prevNum = currNum;

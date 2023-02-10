@@ -7,7 +7,7 @@ using namespace std;
 
 int64_t fact(int N)
 {
-  int64_t result;
+  int64_t result = 1;
 
   for (int i = N; i > 0; i--) {
     result *= i;

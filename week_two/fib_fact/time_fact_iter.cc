@@ -7,11 +7,13 @@ using namespace std;
 
 int64_t fact(int N)
 {
-  //////////////////////////////////////////
-  // INSERT ITERATIVE IMPLEMENTATION HERE //
-  //////////////////////////////////////////
+  int64_t result;
 
-  // Pay attention to the return type!
+  for (int i = N; i > 0; i--) {
+    result *= i;
+  }
+
+  return result;
 }
 
 int main ()

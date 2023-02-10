@@ -4,7 +4,7 @@
 using namespace std;
 
 string fizzbuzz (int input) {
-  if (input % 3 == 0 and input % 5 == 0) {
+  if (input % 3 == 0 && input % 5 == 0) {
     return "fizzbuzz";
   }
 
@@ -26,7 +26,7 @@ int main ()
 {
   for (int n=1; n<=50; ++n)
   {
-    fizzbuzz(n)
+    fizzbuzz(n);
   }
 
   return 0;

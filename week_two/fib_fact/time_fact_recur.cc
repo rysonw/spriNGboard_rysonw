@@ -7,11 +7,12 @@ using namespace std;
 
 int64_t fact(int N)
 {
-  //////////////////////////////////////////
-  // INSERT RECURSIVE IMPLEMENTATION HERE //
-  //////////////////////////////////////////
-
-  // Pay attention to the return type!
+  if (N == 0) {
+    return 1;
+  }
+  else {
+    return N * fact(N - 1);
+  }
 }
 
 int main ()

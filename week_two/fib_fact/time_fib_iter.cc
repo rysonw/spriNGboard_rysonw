@@ -7,9 +7,21 @@ using namespace std;
 
 int fib(int N)
 {
-  //////////////////////////////////////////
-  // INSERT ITERATIVE IMPLEMENTATION HERE //
-  //////////////////////////////////////////
+    int prevNum = 0;
+    int currNum = 1;
+    int sum = 0;
+
+    if (N == 0) {
+      return 0;
+    }
+
+    for (int i = 2; i <= N; i++) {
+      sum = prevNum + currNum;
+      prevNum = currNum;
+      currNum = sum;
+    }
+
+    return currNum;
 }
 
 int main ()

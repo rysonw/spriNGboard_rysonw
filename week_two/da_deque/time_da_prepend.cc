@@ -21,17 +21,13 @@ int main ()
   {
     time_data.push_back(vector<int32_t>(num_elems, 0));
 
-    ////////////////////////////////////////////////////////
-    // CREATE AN EMPTY DYNAMIC ARRAY NAMED container HERE //
-    ////////////////////////////////////////////////////////
+    vector<int> container;
 
     for (int32_t elem_idx=0; elem_idx<num_elems; ++elem_idx)
     {
       auto start = chrono::high_resolution_clock::now();
 
-      ///////////////////////////////////////////////////////
-      // INSERT CODE TO PREPEND elem_idx TO container HERE //
-      ///////////////////////////////////////////////////////
+      container.insert(container.begin(), elem_idx);
 
       auto end = chrono::high_resolution_clock::now();
       auto elapsed__ns = chrono::duration_cast<chrono::nanoseconds>(

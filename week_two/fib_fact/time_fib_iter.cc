@@ -16,7 +16,7 @@ int fib(int N)
     }
 
     if (N == 1) {
-      return 0;
+      return 1;
     }
 
     for (int i = 2; i <= N; i++) {

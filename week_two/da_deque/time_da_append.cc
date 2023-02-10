@@ -14,8 +14,8 @@ int main ()
 {
   vector<vector<int32_t>> time_data;
 
-  int32_t const num_runs  =      5;
-  int32_t const num_elems = 10'000;
+  int32_t const num_runs  = 5;
+  int32_t const num_elems = 10;
 
   for (int32_t run_idx=0; run_idx<num_runs; ++run_idx)
   {

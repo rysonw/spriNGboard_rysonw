@@ -1,0 +1,73 @@
+﻿FizzBuzz:
+
+
+Personal Comments/Notes:
+Nothing too difficult about this specific problem, the only difference is what we do the values one returns and one print to the console. I have never used C or C++ before but I find printing things to the terminal tedious with all the different redirections required to do so. Both pretty much ran the same.
+Fibonacci and Factorial
+Starting with my skeleton code, add the necessary lines so you can time how long a recursive implementation takes to compute the first 45 Fibonacci numbers.  Note any interesting observations or patterns.
+
+
+Notes: After running the program about three times, the closer we got to calculating the 45th fib number, the the program started slowing down as well. Calculating the 45th fib number took around 3 seconds and some change.
+
+
+Starting with my skeleton code, add the necessary lines so you can time how long an iterative implementation takes to compute the first 45 Fibonacci numbers.  Note any interesting observations or patterns.
+
+
+Notes: After running the program about three times, the program ran almost instantly and while the runtime did increase with each iteration it was not to the rate of the recursively implemented function. It seems the iterative approach is much more efficient in this scenario.
+
+
+Starting with my skeleton code, add the necessary lines so you can time how long a recursive implementation takes to compute the first 20 factorials.  Note any interesting observations or patterns.
+
+
+Notes: After running the program about three times, the program ran almost instantly. Through each recursive call, there seems to be a trend of time increasing very very slightly. 
+
+
+Starting with my skeleton code, add the necessary lines so you can time how long an iterative implementation takes to compute the first 20 factorials.  Note any interesting observations or patterns.
+
+
+Notes: After running the program about three times, the program ran almost instantly. Through each iteration, there seems to be a trend of time increasing very very slightly.
+
+
+Compare the results for Fibonacci and factorial, and note any interesting observations or patterns.
+
+
+Notes: Most functions ran very similarly, the only one that really stuck out was the recursive function that calculated the fib numbers. That seemed to run very slowly. I want to assume it is due to memory slowly taking up space from all the function calls.
+
+
+Adjust one of your files to compute the first 25 factorials.  Note any interesting observations or patterns.
+
+
+Notes: It seems starting on the 21st iteration of the function, the number being calculated is now negative. I want to assume this is due to the number being out of scope for an int
+
+
+
+
+Exercise: Time Dynamic Array and Deque
+Starting with my timing code, add the necessary lines so you can time appending to a dynamic array.  Run the code, and note any interesting observations/patterns.
+
+
+Notes: It seems that the amount of time to append is pretty consistent with an average of about 40 nanoseconds.
+
+
+Starting with my timing code, add the necessary lines so you can time prepending to a dynamic array.  Run the code, and note any interesting observations/patterns.
+
+
+Notes: It seems that the amount of time to prepend is consistent but significantly slower then appending with an average of about 700 nanoseconds per prepend
+
+
+Starting with my timing code, add the necessary lines so you can time appending to a deque.  Run the code, and note any interesting observations/patterns.
+
+
+Notes: Notes: It seems that the amount of time to append is pretty consistent with an average of about 40 nanoseconds with some spikes here and there
+
+
+Starting with my timing code, add the necessary lines so you can time prepending to a deque.  Run the code, and note any interesting observations/patterns.
+
+
+Notes: Notes: It seems that the amount of time to append is pretty consistent with an average of about 40 nanoseconds with some spikes here and there
+
+
+Are there any discrepancies between what you observed and what you expected?  If so, try to find plausible explanations.
+
+
+Notes: Based on this observation, the only outlier is prepending with a dynamic array. I believe this is due to dynamic arrays having no buffer at the front which causes a lot of work to move everything over which slows down the processing immensely. With deque, we eliminate this issue by having a buffer near the front as well.

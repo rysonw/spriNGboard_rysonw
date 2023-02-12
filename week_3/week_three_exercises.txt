@@ -1,0 +1,57 @@
+﻿Exercise 1: Overflow and Underflow
+Starting with my skeleton code, fill in the necessary lines to:
+* initialize 32-bit signed and unsigned integers to zero and decrement them
+* initialize 16-bit signed and unsigned integers to their maximum values an increment them
+
+
+After running my code, I found the signed 32-bit integer changed to -1 and the unsigned integer changed to 4294967295 which is the max number that can be represented with these bits. For the 16-bit signed int, the number went to -32768, and unsigned went to 0.
+Exercise 2: Dynamic Range and Precision
+Starting with my skeleton code, fill in the necessary lines to:
+* create a value (big) equal to 100 million
+* create a value (small) equal to 1
+* create a value (sum) which is the sum big and small 
+for both int32_t and float types.
+
+
+After running my code, the sum of the integers was correct since it returned 100,000,001 but for the floats, it returned 100,000,000.0. This is because there are not enough bits to accurately represent the correct value so it returned 100,000,000.0 which is the closest represented value.
+Exercise 3: Integer Division
+I have provided skeleton code that shows the results of integer division for every combination of numerator and denominator in the range [1,10].  Compile and run the code, and explain the results.
+
+
+Extend the code to work for all combinations of numerator and denominator in the range [-10,+10].  Compile and run the code, and explain the results.
+
+
+After running the code, I see that regular integer division rules take place. When we divide two numbers and the number returned is not a nice number, we take the integer and truncate everything past the decimal. 
+
+
+After running my code, I am seeing the same integer rules applied just with a bigger data set and negative numbers now being outputted.
+Exercise 4: Floating-Point Division
+I have provided skeleton code that shows the results of integer division for every combination of (integer) numerator and denominator in the range [1,10].  Compile and run the code, and explain the results.
+
+
+Extend the code to work for all combinations of numerator and denominator in the range [-10,+10].  Compile and run the code, and explain the results.
+
+
+After running the code, I see that floating division is a lot more accurate than int division because of the inclusion of the decimal.
+
+
+After running my code, I am seeing very similar results related to the first table given. The biggest difference is the different things being returned in the “0” column. I see -/+ inf’s being returned based on what value is in the numerator and a -NaN value being returned. The showpos function added a negative symbol for the NaN value which I found very interesting.
+Exercise 5: Building Values From Bits
+Starting with the integer skeleton code I’ve provided, add the lines necessary to:
+* make x = 2695506604
+   * there’s a pattern to the bits...
+* toggle bit 3
+* toggle bit 3 a second time
+* clear bit 7
+* clear bit 16-31 in one operation
+You’re only allowed to use basic bitwise operations (&, |, ^, ~, <<, >>).
+
+
+After running my code, I found what I think to be the correct outputs. I set x to 2695506604 by using 0b followed by the binary representation of 2695506604. Then, I manipulated all the bits using the bitwise operators and came out with the output of 10796.
+
+
+Starting with the floating-point skeleton code I’ve provided, and using only basic bitwise operations, set the necessary bits in x to represent the value 0b1.101 x 2^-5.  The ensuing reinterpret_cast() should output the decimal equivalent, -5.078125e-02.
+
+
+Exercise 6: Bit Buffer Size
+Starting with my skeleton code, write a function that returns the number of W-bit words needed to store N bits.

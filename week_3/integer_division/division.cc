@@ -36,5 +36,41 @@ int main ()
     }
     cout << endl;
   }
-}
+  
+  cout << "" << endl;
+  
+  // Range from -10 to 10
+  
+  cout << setw(5) << "";
+  
+  for (int denom = -10; denom <= 10; ++denom) {
+    cout << setw(4) << showpos << denom;
+  }
+  cout << endl;
 
+  cout << setfill('-') << setw(5) << "";
+  
+  for (int denom = -10; denom <= 10; ++denom) {
+    cout << setfill('-') << setw(4) << "";
+  }
+  cout << endl;
+  cout << setfill(' ');
+
+  for (int numer = -10; numer <= 10; ++numer) {
+    cout << setw(3) << showpos << numer << ": ";
+    
+    for (int denom = -10; denom <= 10; ++denom) {
+        if (denom == 0){
+            cout << setw(4) << showpos << 0;
+        }
+        else{
+            int result = numer/denom;
+            cout << setw(4) << result;
+        }
+        
+    }
+    cout << endl;
+  }
+
+  return 0;
+}

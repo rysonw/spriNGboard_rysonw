@@ -11,6 +11,8 @@ int main ()
   // MANIPULATE BITS HERE //
   //////////////////////////
 
+  x = 0b0; //TODO
+
 
   float f = reinterpret_cast<float&>(x);
   cout << "x = " << x << endl;

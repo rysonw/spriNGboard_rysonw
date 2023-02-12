@@ -11,8 +11,8 @@ int main ()
     // INITIALIZE THEM TO ZERO       //
     ///////////////////////////////////
 
-    int s = 0;
-    unsigned int u = 0;
+    int32_t s = 0;
+    uint32_t u = 0;
 
 
     cout << "32-bit before decrement:" << endl;
@@ -39,8 +39,8 @@ int main ()
     // INITIALIZE THEM TO MAXIMUMS   //
     ///////////////////////////////////
 
-    short s = 32767;
-    unsigned short u = 65535;
+    int16_t s = 32767;
+    uint16_t u = 65535;
 
     cout << "16-bit before increment:" << endl;
     cout << "  signed:   " << s << endl;

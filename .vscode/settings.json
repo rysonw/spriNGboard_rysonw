@@ -35,6 +35,7 @@
   ],
   "files.associations": {
     "vector": "cpp",
-    "iterator": "cpp"
+    "iterator": "cpp",
+    "iostream": "cpp"
   }
 }

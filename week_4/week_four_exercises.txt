@@ -1,0 +1,72 @@
+﻿Exercise 1: Creating std::vector
+In modern C++, there are several constructor forms:
+* using parentheses (classic constructor format)
+* using braces (modern initializer list format)
+* constructor-like syntax (parens or braces directly after object)
+* assignment-like syntax (equal sign followed by initial value)
+Often these forms are interchangeable, but not always.
+
+
+Starting with my skeleton code, uncomment one line at a time to construct vector v using each of the following variations, and note any interesting observations.
+* vector<int> v{10,5};
+* vector<int> v = {10, 5};
+* vector<int> v(10,5);
+* vector<int> v = (10,5);
+
+
+Upload your notes (x4) to GitHub.
+
+
+Method 1:
+Nothing interesting to note, it printed “10 5” to the console. You are initializing the values in the vector.
+
+
+Method 2:
+I do not know if it is just me, but the compile time for this method compared to the first one was a little longer
+
+
+Method 3:
+Using parentheses, I see ten 5’s being printed stating that this method takes the second parameter and initializes a vector with that value a certain number of times based on the first parameter.
+
+
+Method 4:
+This method failed to run. (10, 5) is being evaluated as an expression and the main() function is trying to convert it to a vector which is causing an error.
+
+
+
+
+________________
+Exercise 2: std::map vs std::unordered_map
+Starting with my skeleton code, fill in the missing code sections.
+
+
+What do you notice about the final ordering of the map vs the unodered_map?
+
+
+What does this suggest about the underlying data structures?  Try to verify this using the documentation for each collection on cppreference.com.
+
+
+What happens to the load factor as you add items to the unordered_map?  Explain why this happens.
+
+
+Upload your code (x1) and notes (x3) to GitHub.
+
+
+________________
+Exercise 3: Algorithms
+Starting with my skeleton code, fill in the missing code sections.
+
+
+Each non-#include code snippet should consist of only one statement.
+
+
+Upload your code (x1) and its output (x1) to GitHub.
+
+
+Output:  
+v = 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+v = 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 
+v = 5 6 7 8 9 10 11 12 13 14 17 16 15 18 19 
+v = 20 20 20 20 9 10 11 12 13 14 17 16 15 18 19 
+v = 20 9 10 11 12 13 14 15 16 17 18 20 20 20 19 
+v = 10 12 14 16 18 20 20 20 20 9 11 13 15 17 19

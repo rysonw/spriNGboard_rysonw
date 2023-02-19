@@ -1,0 +1,87 @@
+﻿Numbers in Different Bases
+   * Radix Point
+      * The point that separates the numbers with positive coefficients
+      * In Base-10 we call it the decimal point
+   * Use 2^n to calculate the number of values you can create with the amount of bits you currently have
+   * base-10, binary, octal, hexadecimal
+      * conversions between power-of-2 bases
+      * conversion between base2 and base10
+   * normal addition, subtraction, multiplication
+   * connections with series and sums
+      * 1 + 2 + 4 + 8 + ... + N = 2N-1
+      * 1/2 + 1/4 + 1/8 + ... = 1
+* Int Types
+   * Modulo makes Subtraction EASY
+   * Modulo returns values in a pattern -> THINK CIRCLE/CLOCK
+      * Additive Inverse; Number that makes 0
+      * We invert numbers and then add them together
+         * 9’s complement (Inverse)  + 1 = 10’s compliment (Base 10)
+         * 1’s complement (Inverse) + 1 = 2’s compliment (Binary)
+   * Any values can be stored in bits, not just numbers. How we interpret these bits is VERY IMPORTANT
+   * We use int_32 in C++ to standardize and know how many bits we have as using int changes from machine to machine
+   * Unsigned Integers
+      * Integers with no negative sign (all pos)
+      * wrapping, overflow, underflow
+   * Signed Integers
+      * There are always gonna be two values that have this property -> 0 and (2^n)/2
+      * negation
+         * 1s complement
+         * 2s complement
+      * subtracting by adding
+      * uniqueness of zero
+      * the asymmetric range of representable values (the midpoint value is not directly in the middle)
+   * division
+      * drops fractional part
+      * by zero not allowed
+   * modulo (remainder)
+   * int32_t, int64_t, etc
+* floating-point types
+   * representation via “scientific notation”
+      * exponent ==> dynamic range
+      * mantissa ==> precision
+         * Which values can you represent precisely?
+   * representable values
+      * due to finite number of bits / non-terminating fractions
+      * due to precision vs dynamic range
+   * +inf,-inf, NaN (FLOATS ONLY)
+      * 1/0 -> Inf in computers
+      * 0/0 -> NaN (can also use complex numbers)
+   * round, floor, ceil, truncate
+      * positive and negative values
+   * float, double, long double
+* bit manipulation
+   * NOT, AND, OR, XOR
+   * To CLEAR, use AND
+   * To SET, use OR
+   * To TOGGLE, use XOR
+   * bit
+      * Shifting (<<) 
+         * sign extension
+      * Setting (OR)
+      * Clearing (AND)
+      * Toggling (XOR)
+* casting between types
+   * static_cast
+   * reinterpret_cast
+   * ye olde (type) cast
+* maximum number of storable values
+   * V = 2^B <==> B = log2(V)
+   * basic combinatorics
+* packed binary and endianness
+   * usually only an issue when passing binary data between machines or using different pointer types
+* dimensional analysis
+   * converting equality statements to conversion factors
+* Big-O notation
+   * We care about worst cases only (Asymptotic Behvaiour)
+   * * Math
+   * functions and their inverses
+      * linear
+         * y = mx + b <==> x = ny + c
+         * ax + by + c = 0
+      * polynomial / root
+         * y = x^2 <==> x = sqrt(y)
+      * exponential / log
+         * y = 2^x <==> x = log2(y)
+   * scientific notation and SI units
+      * sign * mantissa * 10^exponent
+      * T, G, M, k, 1, m, u,

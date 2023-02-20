@@ -33,24 +33,19 @@ Method 4:
 This method failed to run. (10, 5) is being evaluated as an expression and the main() function is trying to convert it to a vector which is causing an error.
 
 
-
-
 ________________
 Exercise 2: std::map vs std::unordered_map
 Starting with my skeleton code, fill in the missing code sections.
 
 
 What do you notice about the final ordering of the map vs the unodered_map?
-
+The map is ordered and the unordered map is presenting its avlues based on its hash.
 
 What does this suggest about the underlying data structures?  Try to verify this using the documentation for each collection on cppreference.com.
-
+The map is a binary search tree of sorts as the map keeps the order of the items.  The unordered map is more of a hash map and does not keep the order of the items.
 
 What happens to the load factor as you add items to the unordered_map?  Explain why this happens.
-
-
-Upload your code (x1) and notes (x3) to GitHub.
-
+As the number of items approaches the number of buckets, the bucket size is increased a certain amount. This is done to help stabilize the run time of the function.
 
 ________________
 Exercise 3: Algorithms
@@ -58,9 +53,6 @@ Starting with my skeleton code, fill in the missing code sections.
 
 
 Each non-#include code snippet should consist of only one statement.
-
-
-Upload your code (x1) and its output (x1) to GitHub.
 
 
 Output:  

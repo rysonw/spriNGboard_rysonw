@@ -1,0 +1,14 @@
+## from https://stackoverflow.com/questions/47508591/running-cmake-on-amazon-linux
+## and  https://discourse.cmake.org/t/how-to-compile-dcmake-use-openssl-off/1271
+
+rm -rf installer_source_files
+mkdir installer_source_files
+cd installer_source_files
+
+wget https://cmake.org/files/v3.18/cmake-3.18.0.tar.gz
+tar -xvzf cmake-3.18.0.tar.gz
+cd cmake-3.18.0
+./bootstrap -- -DCMAKE_USE_OPENSSL=OFF
+make
+sudo make install
+

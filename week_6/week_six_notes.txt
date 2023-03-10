@@ -36,3 +36,4 @@
    → A pure virtual method is a method that needs to be implemented when inheriting from this class
 - An internface is made entirely of virtual methods, YOU ARE A BLUEPRINT
 - SOLID
+- Dynamic Dispatch

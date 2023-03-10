@@ -13,10 +13,10 @@ void func (int const & x)
 void func (int && x)
 { cout << "func(int && x) rvalue ref" << endl; }
 
-#if 1
-void func (int const && x)
-{ cout << "func(int const && x) const rvalue ref" << endl; }
-#endif
+// #if 1
+// void func (int const && x)
+// { cout << "func(int const && x) const rvalue ref" << endl; }
+// #endif
 
 int main ()
 {

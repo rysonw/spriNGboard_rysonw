@@ -1,0 +1,135 @@
+Exercise 1: Install cmake
+Please make sure you’ve completed this exercise before next Sunday’s session!
+
+Next week we will need to have an up-to-date version of cmake installed on your AWS Workspace.  It takes a while to install, so I’m having you install it ahead of time:
+cd into the cmake_installer/ directory in the spriNGboard_week_06 repo
+ls and verify that the install_cmake.txt file is present
+if it isn’t there, you’re in the wrong place!
+source install_cmake.txt
+you should see lots of information start scrolling by
+wait about ~10-15 minutes while the script runs
+feel free to do something else in the meantime
+eventually, you will be prompted to enter your AWS Workspace password
+do that and hit enter
+a few seconds later, the installation process should complete
+run the following commands to verify installation success:
+which cmake
+should output /usr/local/bin/cmake
+cmake --version
+should indicate version 3.18.0
+
+------
+
+Exercise 2: Const-ness
+Compile and run my skeleton code.
+
+Clearly explain why &s sometimes matches the corresponding &ncs/&cs values and other times it does not.
+
+Response: It depends on what is being passed to the corresponding function. For example, non_const_by_val passes in a copy of the value which in turn, creates a new copy of ncs that has a separate address different from the original ncs
+
+Clearly explain why ncs before/after only sometimes match, and why cs before/after always match.
+
+Response: Since cs is a const, the original value we are referencing cannot be changed. Ncs is not declared as a constant so it can be changed
+
+Clearly explain why the two calls to overloaded_func() have different outputs.
+
+Response: Because the value being passed into one function is a constant while the other one is non-constant
+
+Try uncommenting LINE 1 and/or LINE 2.  Clearly explain why the compiler always allows s.size() to be called but sometimes rejects calls to s.append().  Make sure these lines are re-commented when you’re done.
+
+Response: Since the function declares the parameter s to be constant, we are unable to make changes to the value and therefore run into an error because we are trying to change the value “s”. Size() does not change the value of s.
+
+Uncomment LINE 3.  Clearly explain why the compiler complains here but not at the next call to non_const_by_val().
+
+Response: This is because the function non_const_by_ref() declares the parameter being passed as non-const while cs is a const. This throws an error. The reason why non_const_by_val() does not throw an error is being a copy of cd is being passed into the function and since copies are by default declared as non-const, the function runs.
+
+----------
+
+Exercise 3: Type vs Class
+Compile and run my skeleton code.
+
+Clearly explain what LINE 1, LINE 2, and LINE 3 are doing.
+
+Response: Line 1 is creating a new string object called x and intializing with the value “hello”. Line 2 is creating another string but this time as a reference and it is referring to the value x. Line 3 is similar to Line 2 but this time it is creating a constant version.
+
+Clearly explain the output values for &x, &rx, and &crx.  What does this say about the number of string objects in this program?
+
+Response: They all have the same address so we only have one string object which is the one created in line 1.
+
+Try uncommenting each of  LINE 4, LINE 5, and LINE 6.  Why does LINE 6 cause an error even though the string object x is non-const?
+
+Response: Even though x is non-const, the reference crx is const which restricts us from making changes t the thing we are referring to.
+
+----------------
+
+Exercise 4: Basic Polymorphism and Virtual Functions
+Compile and run my skeleton code.
+
+Clearly explain the output.
+
+Response: We create a cow object and FullCow object and pass these objects into the poke function. We pass in the value as a const ref so the object cannot be changed and call the make sound function. This function calls the corresponding object’s make sound respectively
+
+Remove the virtual keyword on the make_sound() method in Cow and FullCow, and re-run the program.  Why was FullCow still able to override Cow’s make_sound() method?
+
+Response: We still are able to override since the Cow class overrides the Animal make_sound() which is declared as virtual. 
+
+Add a trailing final keyword to Cow’s make_sound() method.  Why does the compiler complain?
+
+Response: The final keyword means that the current method cannot be overridden which causes the error in the FullCow class.
+
+Add your own class(es) derived from Animal.
+
+-------------
+
+Exercise 5: Slicing
+Compile and run my code.  Clearly explain the output.
+
+Upload your notes (x1) to your GitHub repo.
+
+Response: We create 3 objects, a Cow object “c”, a non-const Animal object with a ref to c “cr”, and an Animal object equal to c. The first line returns “moo” because c is a Cow object. Cr returns moo as well because the function in Animal is virtual so we are able to call the function based on the object type we are referencing(Dynamic Dispatch). CS is a copy constructor an since we're creating an Animal object, we slice off the Cow parts of c. This means that cs returns I don’t know how to make a sound
+Exercise 6: lvalues and rvalues
+Compile and run my code.  Clearly explain each output line.
+
+Output:
+
+func(int && x) rvalue ref
+func(int && x) rvalue ref
+func(int && x) rvalue ref
+func(int & x): lvalue ref
+func(int && x) rvalue ref
+func(int && x) rvalue ref
+func(int const & x): const lvalue ref
+func(int && x) rvalue ref
+func(int const && x) const rvalue ref
+
+Response: 
+Line 1: 5 is a rvalue because it has no memory location
+Line 2: Same as above
+Line 3: Same declaration as 1, just different syntax
+Line 4: We declare an actual variable so it has a memory address, therefore we return an lvalue with a reference
+Line 5: We perform an operation and therefore create a temp rvalue and pass this instead
+Line 6: move() returns a rvalue by default
+Line 7: We decalrea an actual const var which is an lvalue
+Line 8: Same as line 5
+Line 9: Same as line 6 but y is a const
+
+Disable the second #if pragma, and rerun the code.  Explain the difference(s).
+
+Response: After commenting out the second pragma, the only change I noticed was the last line in the output was a const lvalue ref instead of a rvalue ref. Const casting (looked it up) allows the compiler to implicitly convert the rvalue to an lvalue
+
+Output:
+func(int && x) rvalue ref
+func(int && x) rvalue ref
+func(int && x) rvalue ref
+func(int & x): lvalue ref
+func(int && x) rvalue ref
+func(int && x) rvalue ref
+func(int const & x): const lvalue ref
+func(int && x) rvalue ref
+func(int const & x): const lvalue ref
+
+Also disable the first #if pragma.  Explain why the compiler complains.
+
+Response: Unlike the previous output, we are unable to bind a const value to a non-const function. That is why the compiler is complaining.
+
+

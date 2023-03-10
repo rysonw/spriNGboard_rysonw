@@ -24,7 +24,8 @@ int main ()
   Cow c;
 
   Animal & cr = c;
-  Animal   cs = c;
+  Animal   cs = c; //We are slicing off the subclass here since cs is an Animal object
+  Cow css = c;
 
   poke(c);
   poke(cr);
@@ -32,4 +33,3 @@ int main ()
 
   return 0;
 }
-

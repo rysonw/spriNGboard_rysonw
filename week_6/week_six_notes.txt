@@ -1,0 +1,38 @@
+- const and ref values
+- lvalue is real, has a place in memory vs rvalue which is not “real” 
+- const you cannot modify the actual value
+- A const reference, k you can ref a value without changing it
+- If you put const after a method name, you are guarenteeing that the object will not be changed. Method is const
+   → This is useful if you declare an object to be const
+- Procedural Languages:
+   → Fortran - Optimizing Compiler and Functions
+   → COBOL - Comments, Records
+- Contraint Languages(Declarative)
+   → SQL
+- Object Oriented Languages
+- A design is object oriented if it models a system or domain AND is uses late-binding polymorphism for extensibility
+- Dependency Inversion:
+   → Insteaad of depending on specific concrete details, create stable abstraction and depnd on those
+   → Ex. instead of relying on a rav4 model 2023, we caan create a model “car” that relates to all cars
+- Polymorphism - Many Shapes or Many Implementations
+- The Liskov Substitution Principle was put in plaace to make sure that objects are truly polymorphic
+   → States that we should be able to replace a subclass object with its super class and there should be no errors
+   → A violation would be if the subclass is missing a function that the superclass has
+   → Duck Typing: Basically a term for dynaamic laanguages where variables are implicit
+      ⇒ If an object behaves lie aa certain type, treat it like a certain type
+- Late-Binding the implementation of something is created after implemneentation of the system design is complete
+- The Open Close Principle states that classes, modules, functions, etc. should be open for extension but closed for modifications. AA we can add extensive features to something without changing the code that is already there
+   → Example would be if we had a logger class thaat logs files and wanted to add a new feature, we cn simply create a new class that inherits from the logger class called remote logger that implements all the features of the logger class with the new functions added on top
+- The Interface Segregationj Principle states that clients sould not be forces to depend on interfaces that they do not use
+   → Interfaces should be cohesive and focused
+- The DIP allows us high-level modules to not depend on low-level modules
+   → high-level means that it is more complex, abstrct and broad
+- Single Responsibility Principle states that each class or module should have one responsibility to change and should not be responsible for multiple unrelated tasks
+- The Law of Demeter is a design rule that staates a object should only communicate with its immeditate dependencies
+   → Ex. If Object A request something from Object B than this is fine, but if the same scenaario occurs but Object B is required to go to Object Z to obtain whaat Object  wants, it creates a web of dependencies as now, Object A now relies on Object Z + Object B
+   → A good fix would be to go straight to Object Z in this case
+- Virutal Method is basically aa method that can be overwritten by subclass of a superclass
+   → Virtual determined by class, non-virtual determine by type
+   → A pure virtual method is a method that needs to be implemented when inheriting from this class
+- An internface is made entirely of virtual methods, YOU ARE A BLUEPRINT
+- SOLID

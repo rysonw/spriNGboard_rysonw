@@ -6,32 +6,33 @@
 
 using namespace std;
 
-Game::Game() : places{}, purses{}, currentPlayer(0){
+Game::Game() : places{}, purses{}, currentPlayer(0){ //Initializes a Game Object
 	for (int i = 0; i < 50; i++)
 	{
-		ostringstream oss (ostringstream::out);
+		ostringstream oss (ostringstream::out); //Create stremstring object, used as a dynmaic string of sorts. We can append things to the object for later use
 		oss << "Pop Question " << i;
 
-		popQuestions.push_back(oss.str());
+		popQuestions.push_back(oss.str()); //We create on function called createQuestion, which will take in argument(topic) and int for index and build the question there
 
-		char str[255];
-		sprintf(str, "Science Question %d", i);
-		scienceQuestions.push_back(str);
+		scienceQuestions.push_back(createQuestionString("Science", i));
+		sportsQuestions.push_back(createQuestionString("Sports", i));
+		rockQuestions.push_back(createQuestionString("Rock", i));
 
-		char str1[255];
-		sprintf(str1, "Sports Question %d", i);
-		sportsQuestions.push_back(str1);
-
-		rockQuestions.push_back(createRockQuestion(i));
+		//rockQuestions.push_back(createRockQuestion(i));
 	}
 }
 
-string Game::createRockQuestion(int index)
-{
-	char indexStr[127];
-	sprintf(indexStr, "Rock Question %d", index);
-	return indexStr;
+string Game::createQuestionString(const string& prefix, int index) {
+	return prefix + " Question " + std::to_string(index);
 }
+
+// string Game::createRockQuestion(int index)
+// {
+// 	char indexStr[127];
+// 	sprintf(indexStr, "Rock Question %d", index);
+// 	return indexStr;
+// }
+
 
 bool Game::isPlayable()
 {
@@ -59,7 +60,7 @@ void Game::roll(int roll)
 	cout << players[currentPlayer] << " is the current player" << endl;
 	cout << "They have rolled a " << roll << endl;
 
-	if (inPenaltyBox[currentPlayer])
+	if (inPenaltyBox[currentPlayer]) //
 	{
 		if (roll % 2 != 0)
 		{

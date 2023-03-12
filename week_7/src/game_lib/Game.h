@@ -26,7 +26,8 @@ class Game{
 
 public:
 	Game();
-	string createRockQuestion(int index);
+	//string createRockQuestion(int index);
+	string createQuestionString(const string& prefix, int index);
 	bool isPlayable();
 	bool add(string playerName);
 

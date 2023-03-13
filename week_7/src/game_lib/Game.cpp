@@ -34,14 +34,6 @@ string Game::createQuestionString(const string& category, int index) {
     return oss.str();
 }
 
-// string Game::createRockQuestion(int index)
-// {
-// 	char indexStr[127];
-// 	sprintf(indexStr, "Rock Question %d", index);
-// 	return indexStr;
-// }
-
-
 bool Game::add(string playerName){
 	players.push_back(playerName);
 	places[players.size()] = 0;

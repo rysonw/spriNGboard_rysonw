@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <list>
 #include <vector>
@@ -13,13 +14,14 @@ class Game{
 
 			int places[6];
 			int purses[6];
-
 			bool inPenaltyBox[6];
 
 			list<string> popQuestions;
 			list<string> scienceQuestions;
 			list<string> sportsQuestions;
 			list<string> rockQuestions;
+
+			unordered_map<string, list<string>*> questionDecks;
 
 			unsigned int currentPlayer;
 			bool isGettingOutOfPenaltyBox;
@@ -35,12 +37,14 @@ public:
 	void roll(int roll);
 
 	private:
+
+		void createQuestions();
 		void askQuestion();
 		string currentCategory();
 
 				public:
-					bool wasCorrectlyAnswered();
-					bool wrongAnswer();
+					bool handleCorrectAnswer();
+					bool handleWrongAnswer();
 
 private:
 	bool didPlayerWin();

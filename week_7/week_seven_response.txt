@@ -1,2 +1,32 @@
 Changes:
-- Sample
+- Overall:
+	- Fixed the indenting on some functions
+	- Added a lot of comments to describe the purpose of things
+	- Removed some things from GameRunner that were not needed
+	
+- Game Class
+   → Created a new class function called createQuestionString() which takes in a string and int to create the Science, Sports and Rock questions
+   → There was two createRockQuestion() functions
+   → Made is so that questions are only created through one function
+   → Initlized a board and dictionary of question decks for ease of access in other functions
+
+- roll()
+   → There was some duplication so I removed chunk from the if (roll % 2) statement as it is repeated in the else statement
+   → Added a modulo statement to track if we go over 12 spaces insteead of an if statement
+
+- askQuestion()
+   → Created a hashmap with the key being the category and the value being a ref to that respective deck
+   → Save the current deck after a lookup
+
+- currentCategory()
+   → Used an array of categories and modulo magic to return the correct category
+
+- wasCorrectlyAnswered()
+   → Changed name to handleCorrectAnswer
+   → Duplication so I changed to check for the unique case which is player is currently in the box and not getting out
+   → Changed player reassignment statement to include modulo arithmetic, which allows us to turn it into a one-liner
+
+- wrongAnswer()
+   ⇒ Changed name to handleWrongAnswer
+   ⇒ I think a logical suggestion would be combine this function with wasCorrectlyAnswered() but I think that would make the resulting function a little to verbose; better practice to keep it seperate
+   

@@ -209,7 +209,8 @@ void Game::_handle_player_turn (
 
   if (cur_player.get_is_in_penalty_box())
   {
-    if (!is_getting_out_of_penalty_box) {
+    if (!is_getting_out_of_penalty_box) //Even Roll
+    {
       ostringstream ostr(std::ostringstream::out);
       ostr << cur_player.get_name()
            << " is not getting out of the penalty box"

@@ -45,12 +45,13 @@ Game::Game ()
 bool Game::add (string playerName)
 {
   players.push_back(playerName);
-  places[players.size()] = 0;
-  purses[players.size()] = 0;
-  inPenaltyBox[players.size()] = false;
+  int currPlayerIndex = players.size() - 1;
+  places[currPlayerIndex] = 0;
+  purses[currPlayerIndex] = 0;
+  inPenaltyBox[currPlayerIndex] = false;
 
   cout << playerName << " was added" << endl;
-  cout << "They are player number " << players.size() << endl;
+  cout << "They are player number " << currPlayerIndex + 1 << endl;
 
   return true;
 }

@@ -1,0 +1,1 @@
+/usr/bin/g++ -O2 CMakeFiles/trivia.dir/GameRunner.cpp.o -o trivia  ../game_lib/libGame.a 

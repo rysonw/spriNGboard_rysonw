@@ -1,0 +1,1 @@
+/usr/bin/g++ -O2 CMakeFiles/test__Game.dir/test__Game.cc.o -o test__Game  ../../../catch_install/lib64/libCatch2Main.a ../../src/game_lib/libGame.a ../../../catch_install/lib64/libCatch2.a 

@@ -1,0 +1,1 @@
+/usr/bin/g++ -O2 CMakeFiles/test__regression.dir/test__regression.cc.o -o test__regression  ../../../catch_install/lib64/libCatch2Main.a ../../../catch_install/lib64/libCatch2.a 

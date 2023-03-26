@@ -1,0 +1,25 @@
+Exercise 1: Corrent the spelling mistake
+Starting with my refactored regression-tested code, fix the misspelled “corrent” with “correct”.  Adjust the regression test golden data accordingly.  Note any interesting observations.
+
+Do this work on a branch named “exericise_1”, leaving the main branch intact.
+
+Make sure the regression tests pass with your new code!
+
+Notes: Was a simple fix, just commented out the line that declared the string correct. Ran a command to basically go through all files in golden_data and replace corrent with correct. Passed all test cases.
+
+Command used: find golden_data -type f -exec sed -i 's/corrent/correct/g' {} +
+
+Push your code (x1) and notes (x1) to your GitHub repo.
+
+-----------------------------------------------------
+
+Exercise 2: Fix the penalty box logic
+Starting with your code from Exercise 1, fix the penalty box logic.  Adjust the regression test golden data accordingly.  Note any interesting observations.  How confident are you in your fix?
+
+Do this work on a branch named “exercise_2”, leaving the main and exercise_1 branches intact.
+
+Notes: I noticed that the penalty box is 1-indexed. Since the penalty bos has a capped sixe of 6, that means if somehow, all players were to be sent to the penalty box, there would be an overflow. Added a change where I create an int that calculates the size and add subtract one to get the 0-based index
+
+Make sure the regression tests pass with your new code!
+
+Push your code (x1) and notes (x1) to your GitHub repo.

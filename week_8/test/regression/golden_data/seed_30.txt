@@ -19,7 +19,7 @@ They have rolled a 3
 Sue's new location is 3
 The category is Rock
 Rock Question 0
-Answer was corrent!!!!
+Answer was correct!!!!
 Sue now has 1 Gold Coins.
 Chet is the current player
 They have rolled a 5

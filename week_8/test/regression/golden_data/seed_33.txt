@@ -19,7 +19,7 @@ They have rolled a 5
 Sue's new location is 5
 The category is Science
 Science Question 0
-Answer was corrent!!!!
+Answer was correct!!!!
 Sue now has 1 Gold Coins.
 Chet is the current player
 They have rolled a 2
@@ -37,7 +37,7 @@ They have rolled a 4
 Sue's new location is 9
 The category is Science
 Science Question 2
-Answer was corrent!!!!
+Answer was correct!!!!
 Sue now has 2 Gold Coins.
 Chet is the current player
 They have rolled a 3
@@ -60,7 +60,7 @@ They have rolled a 4
 Sue's new location is 1
 The category is Science
 Science Question 3
-Answer was corrent!!!!
+Answer was correct!!!!
 Sue now has 3 Gold Coins.
 Chet is the current player
 They have rolled a 3
@@ -78,7 +78,7 @@ They have rolled a 4
 Sue's new location is 5
 The category is Science
 Science Question 4
-Answer was corrent!!!!
+Answer was correct!!!!
 Sue now has 4 Gold Coins.
 Chet is the current player
 They have rolled a 4

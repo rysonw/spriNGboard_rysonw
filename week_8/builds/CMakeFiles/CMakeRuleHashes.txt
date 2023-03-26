@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+5daf02d1028a785df030aba543404beb test/regression/CMakeFiles/Trivia
+db255f567d822925a33071fc184b6b06 test/regression/create_golden_data.pl

@@ -216,16 +216,15 @@ void Game::_handle_player_turn (
            << " is not getting out of the penalty box"
            << endl;
       // preserve existing bug behavior
-      if (!cur_player.response_is_correct()) {
-        ostr << "Question was incorrectly answered" << endl;
-        ostr << cur_player.get_name()
-             << " was sent to the penalty box"
-             << endl;
+      //if (!cur_player.response_is_correct()) {
+        //ostr << "Question was incorrectly answered" << endl;
+        //ostr << cur_player.get_name()
+             //<< " was sent to the penalty box"
+             //<< endl;
+        _broadcast(ostr.str());
       }
-      _broadcast(ostr.str());
-      return;
     }
-    else
+    else //Odd Roll
     {
       // preserve existing bug behavior
       //cur_player.set_is_in_penalty_box(false);

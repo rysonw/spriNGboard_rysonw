@@ -172,8 +172,8 @@ SCENARIO ("player actions are handled correctly")
               REQUIRE(player_2.get_place_idx() == 3);
             }
 
-            THEN ("the player is asked a question") {
-              REQUIRE(player_2.get_was_asked_question() == true);
+            THEN ("the player is NOT asked a question") {
+              REQUIRE(player_2.get_was_asked_question() == false);
             }
 
             THEN ("the player does not get out of the penalty box") {
@@ -229,8 +229,8 @@ SCENARIO ("player actions are handled correctly")
               REQUIRE(player_2.get_place_idx() == 3);
             }
 
-            THEN ("the player is asked a question") {
-              REQUIRE(player_2.get_was_asked_question() == true);
+            THEN ("the player is NOT asked a question") {
+              REQUIRE(player_2.get_was_asked_question() == false);
             }
 
             THEN ("the player does not get out of the penalty box") {

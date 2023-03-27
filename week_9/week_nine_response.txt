@@ -1,0 +1,40 @@
+Exercise 1: Penalty Box Logic, Part 1
+Starting with my refactored unit test code, fix the following bugs:
+when a player is in the penalty box and rolls an even number, that player should not be asked a question
+when a player is in the penalty box and rolls an odd number, the player should get out of the penalty box if their response is correct
+
+Do this work on a branch named “exercise_1”; the “main” branch should remain intact!
+
+Start by modifying the unit tests, and watching them fail.
+
+Update the Game code, and watch the unit tests pass.
+
+Once you’re confident that your code is working as expected, update the regression tests by running the following command in the build/ directory:
+./test/regression/create_golden_data.pl
+
+When you’re done:
+the bugs should be fixed
+unit tests should pass
+regression tests should pass
+
+Notes: I created branches off my main branch. Was a simple fix, just had to do some rearranging. Ran into issues trying to run ./test/regression/create_golden_data.pl. Had to rebuild and start fomr scratch to get it to work.
+
+
+-----------------------------------------------------------------------------
+
+Exercise 2: Penalty Box Logic, Part 2
+Remember that off-by-one error that caused player 1 (at index 0) to start off in the penalty box?  Well, it’s finally time to fix it!  However, there are no unit tests to verify that behavior.
+
+Starting with your code from Exercise 1 above, add the necessary unit tests to verify that player 1 (and only player 1) does indeed start in the penalty box.  Change the unit test to the new desired behavior, and watch it fail.  Fix the Game code and watch the unit test pass.
+
+As before, you’ll need to update the regression tests once you’re confident in your fix.
+
+Do this work on a branch named “exercise_2”; the “main” and “exercise_1” branches should remain intact!
+
+When you’re done:
+the bug should be fixed
+unit tests should pass
+regression tests should pass
+
+Notes: Was not too bad, worst part is probably figuring out where to put the unit test. 
+

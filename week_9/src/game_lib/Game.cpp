@@ -299,13 +299,7 @@ void Game::_add_players ()
     auto & new_player = m_players[idx].get();
     new_player.set_place_idx(0);
     new_player.set_purse(0);
-
-    if (idx == 0) {
-      new_player.set_is_in_penalty_box(true);
-    }
-    else {
-      new_player.set_is_in_penalty_box(false);
-    }
+    new_player.set_is_in_penalty_box(false);
 
     ostringstream ostr(std::ostringstream::out);
     ostr << new_player.get_name() << " was added" << endl;

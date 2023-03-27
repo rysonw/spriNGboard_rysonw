@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ryson/spriNGboard_rysonw/week_9/src/game_lib/Game.cpp
+Game.h
+/home/ryson/spriNGboard_rysonw/week_9/src/game_lib/Game.h
+iostream
+-
+sstream
+-
+
+/home/ryson/spriNGboard_rysonw/week_9/src/game_lib/Game.h
+deque
+-
+functional
+-
+iostream
+-
+list
+-
+string
+-
+vector
+-
+

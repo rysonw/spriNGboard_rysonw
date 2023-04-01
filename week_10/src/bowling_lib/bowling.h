@@ -1,36 +1,37 @@
 #pragma once
-#include <vector>
+
 #include <string>
+#include <vector>
 
-namespace Bowling
-{
-  class Player
-  {
-    Player(std::string name) {
-      this->name = name;
-    }
+namespace Bowling {
 
+    class Player {
     public:
-      std::string get_name() {
-        return name;
-      };
+        Player(std::string name) {
+            this->name = name;
+        }
+
+        std::string get_name() {
+            return name;
+        }
 
     private:
-      std::string name;
-  }; 
-  
-  class Game
-  {
-    Game(Player player) {
-      this->player = player;
-      std::vector<std::vector<int>> frames;
-      int current_frame = 0;
-      int current_ball = 0;
-      int total_score = 0;
-    }
-    //public:
-      
-  };
+        std::string name;
+    };
 
-}
+    class Game {
+    public:
+        Game(Player player);
+        bool is_complete();
+        void record_ball(int num_pins);
+        int get_score();
 
+    private:
+        Player player;
+        std::vector<std::vector<int>> frames;
+        int current_frame;
+        int current_ball;
+        int total_score;
+    };
+
+}  // namespace Bowling

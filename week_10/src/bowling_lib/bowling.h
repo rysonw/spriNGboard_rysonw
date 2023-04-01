@@ -4,19 +4,6 @@
 
 namespace Bowling
 {
-  class Game
-  {
-    Game(Player player) {
-      this->player = player;
-      std::vector<std::vector<int>> frames;
-      int current_frame = 0;
-      int current_ball = 0;
-      int total_score = 0;
-    }
-    //public:
-      
-  };
-
   class Player
   {
     Player(std::string name) {
@@ -31,5 +18,19 @@ namespace Bowling
     private:
       std::string name;
   }; 
+  
+  class Game
+  {
+    Game(Player player) {
+      this->player = player;
+      std::vector<std::vector<int>> frames;
+      int current_frame = 0;
+      int current_ball = 0;
+      int total_score = 0;
+    }
+    //public:
+      
+  };
+
 }
 

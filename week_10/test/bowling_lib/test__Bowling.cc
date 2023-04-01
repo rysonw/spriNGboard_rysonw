@@ -5,9 +5,9 @@
 SCENARIO("Game initialization tests")
 {
   GIVEN("A newly created game") {
-    string player_name = "Ryson";
-    Player player(player_name);
-    Game g(player);
+    std::string player_name = "Ryson";
+    Bowling::Player player(player_name);
+    Bowling::Game g(player);
 
     THEN("The game should have correct player") {
       REQUIRE(g.get_player().get_name() == player_name);

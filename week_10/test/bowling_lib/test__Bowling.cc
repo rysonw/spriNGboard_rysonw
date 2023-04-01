@@ -2,8 +2,30 @@
 
 #include <catch2/catch_test_macros.hpp>
 
-TEST_CASE ("this test will fail")
+SCENARIO("Game initialization tests")
 {
-  REQUIRE(false);
+  GIVEN("A newly created game") {
+    string player_name = "Ryson";
+    Player player(player_name);
+    Game g(player);
+
+    THEN("The game should have correct player") {
+      REQUIRE(g.get_player().get_name() == player_name);
+    }
+
+    AND_THEN("There should be no frames recorded") {
+      for (int i = 0; i < 10; i++) {
+          REQUIRE(g.get_frames()[i].empty());
+        }
+    }
+
+    AND_THEN("The current ball should be zero") {
+      REQUIRE(g.get_curr_ball == 0);
+    }
+
+    AND_THEN("The current score should be zero") {
+      REQUIRE(g.get_score == 0);
+    }
+  }
 }
 

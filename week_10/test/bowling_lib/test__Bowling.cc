@@ -1,31 +1,55 @@
 #include "bowling.h"
-
 #include <catch2/catch_test_macros.hpp>
 
-SCENARIO("Game initialization tests")
-{
-  GIVEN("A newly created game") {
-    std::string player_name = "Ryson";
-    Bowling::Player player(player_name);
-    Bowling::Game g(player);
+class FakeGame {
+public:
+    FakeGame() : player_("Ryson"), game_(player_) {}
 
-    //THEN("The game should have correct player") {
-      //REQUIRE(g.get_player().get_name() == player_name);
-    //}
+    Bowling::Player player_;
+    Bowling::Game game_;
+};
 
-    //THEN("There should be no frames recorded") {
-      //for (int i = 0; i < 10; i++) {
-         // REQUIRE(g.get_frames()[i].empty());
-        //}
-    //}
+//is_complete() Tests
 
-    THEN("The current ball should be one") {
-      REQUIRE(g.get_curr_ball() == 1);
+//record_ball() Tests
+
+//get_score() Tests
+
+TEST_CASE_METHOD(FakeGame, "Test game score with no pins hit") {
+    // Test game score with no pins hit
+    for (int i = 0; i < 20; i++) {
+        game_.record_ball(0);
     }
+    REQUIRE(game_.get_score() == 0);
+}
 
-    THEN("The current score should be zero") {
-      REQUIRE(g.get_score() == 0);
+TEST_CASE_METHOD(FakeGame, "Test game score with all pins hit") {
+    // Test game score with all pins hit
+    for (int i = 0; i < 12; i++) {
+        game_.record_ball(10);
     }
-  }
+    REQUIRE(game_.get_score() == 300);
+}
+
+TEST_CASE_METHOD(FakeGame, "Test game score with spare") {
+    // Test game score with spare
+    game_.record_ball(5);
+    game_.record_ball(5);
+    game_.record_ball(3);
+    for (int i = 0; i < 17; i++) {
+        game_.record_ball(0);
+    }
+    REQUIRE(game_.get_score() == 16);
+}
+
+TEST_CASE_METHOD(FakeGame, "Test game score with strike") {
+    // Test game score with strike
+    game_.record_ball(10);
+    game_.record_ball(3);
+    game_.record_ball(4);
+    for (int i = 0; i < 16; i++) {
+        game_.record_ball(0);
+    }
+    REQUIRE(game_.get_score() == 24);
 }
 

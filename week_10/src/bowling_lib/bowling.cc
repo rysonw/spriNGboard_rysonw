@@ -49,7 +49,8 @@ namespace Bowling
       }
 
       frames[current_frame - 1][current_ball - 1] = num_pins;
-
+      bool is_frame_complete = false;
+      
       if (Game::get_curr_ball() == 1 && num_pins < 10) { //roll was not a strike
           current_ball++;
       }

@@ -1,4 +1,5 @@
 #include "bowling.h"
+#include <stdexcept>
 
 namespace Bowling
 {
@@ -24,13 +25,13 @@ namespace Bowling
 
     //Class Functions
     
-    bool is_complete() {
+    bool Game::is_complete() {
         if (current_frame == 11) {
           return true;
         }
 
         else if (current_frame == 10) { //Last Frame
-         return (frames[9][0] + frames[9][1] >= 10 && (current_ball == 3 || current_ball == 4) //Check to see if the player is eligible for a third roll
+         return (frames[9][0] + frames[9][1] >= 10 && (current_ball == 3 || current_ball == 4)); //Check to see if the player is eligible for a third roll
         }
 
         else {
@@ -38,7 +39,7 @@ namespace Bowling
         }
     }
 
-    void record_ball(int num_pins) {
+    void Game::record_ball(int num_pins) {
       if (is_complete()) {
         throw std::runtime_error("Game has already finished");
       }

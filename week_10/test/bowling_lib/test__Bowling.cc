@@ -19,8 +19,8 @@ SCENARIO("Game initialization tests")
         //}
     //}
 
-    THEN("The current ball should be zero") {
-      REQUIRE(g.get_curr_ball() == 0);
+    THEN("The current ball should be one") {
+      REQUIRE(g.get_curr_ball() == 1);
     }
 
     THEN("The current score should be zero") {

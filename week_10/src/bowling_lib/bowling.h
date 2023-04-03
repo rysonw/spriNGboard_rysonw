@@ -25,7 +25,8 @@ namespace Bowling {
         bool is_complete();
         void record_ball(int num_pins);
         int get_score();
-        int get_curr_ball(); 
+        int get_curr_ball();
+        int get_curr_frame();
         std::vector<std::vector<int>> frames;
 
     private:

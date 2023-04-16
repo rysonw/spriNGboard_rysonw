@@ -68,21 +68,36 @@ namespace Bowling
       
       //Check for prev spares and strikes
       
-      if (frames[current_frame - 1][0] + frames[current_frame - 1][1] == 10) { //Either spare or a strike
+        if (frames[current_frame - 1][0] + frames[current_frame - 1][1] == 10) { //Either spare or a strike
             if (current_frame != 1 && frames[current_frame - 2][0] == 10) { //Prev frame is strike
-                if (get_curr_ball == 1 && frames[current_frame - 1][0] == 10) { 
-                    
+                if (get_curr_ball() == 1 && frames[current_frame - 1][0] == 10) { 
+                    frames[get_curr_frame()][2] += 10;
+                    // Check for a double or a turkey
+                    if (current_frame >= 3 && frames[current_frame - 2][0] == 10 && frames[current_frame - 3][0] == 10) {
+                        frames[get_curr_frame()][2] += 20; // Add 20 for a turkey
+                    } else if (current_frame >= 2 && frames[current_frame - 2][0] == 10) {
+                        frames[get_curr_frame()][2] += 10; // Add 10 for a double
+                    } else {
+                        // Add the score for the next two balls
+                        frames[get_curr_frame()][2] += frames[current_frame - 1][1] + frames[current_frame][0];
+                    }
+                    // Move to the next frame
+                    current_frame++;
+                } else {
+                    // Add the score for the current frame
+                    frames[get_curr_frame()][2] += frames[current_frame - 1][0] + frames[current_frame - 1][1];
+                    // Check for a spare
+                    if (frames[current_frame - 1][0] + frames[current_frame - 1][1] == 10) {
+                        // Add the score for the next ball
+                        frames[get_curr_frame()][2] += frames[current_frame][0];
+                    }
+                    // Move to the next frame
+                    current_frame++;
                 }
-                else {
-                    frames[current_frame - 1][2] += 10 + (frames[current_frame - 1][0] + frames[current_frame - 1][1]);
-                }
-                
             }
-        
-            else { //Spare
-                frames[current_frame - 1][2] += frames[current_frame - 1][0];
-            }
-      }
+        } else { //Spare
+            frames[current_frame - 1][2] += frames[current_frame - 1][0];
+        }
 
       
       //Check to see what roll we are on
@@ -103,70 +118,10 @@ namespace Bowling
               current_ball++;
           }
       }
-
-    //   // Calculate score for the current ball and update total score
-    //   int frame_score = frames[current_frame - 1][0] + frames[current_frame - 1][1] + num_pins;
-    //   if (current_frame == 1) {
-    //       total_score += num_pins;
-    //   } else {
-    //       total_score += frame_score;
-    //   }
-
-    //   if (frame_complete) {
-    //       // Calculate carryover and update score for completed frame
-    //       std::vector<int> carryover(10, 0); // Initialize carryover vector to all zeros
-    //       frame_score = calculate_carryover(frames[current_frame - 1], carryover, current_frame - 1);
-    //       total_score += frame_score;
-    //       // Add carryover to previous frames
-    //       for (int i = current_frame - 2; i >= 0 && carryover[i] > 0; i--) {
-    //           total_score += carryover[i];
-    //       }
-    //       // Reset current ball and frame
-    //       current_ball = 1;
-    //       current_frame++;
-    //   } else {
-    //       // Update current ball
-    //       if (current_ball == 1 && num_pins < 10) {
-    //           current_ball++;
-    //       } else {
-    //           current_ball = 1;
-    //           current_frame++;
-    //       }
-    //   }
     }
 }
 
-    //   // Calculate score for the current ball and update total score
-    //   int frame_score = frames[current_frame - 1][0] + frames[current_frame - 1][1] + num_pins;
-    //   if (current_frame == 1) {
-    //       total_score += num_pins;
-    //   } else {
-    //       total_score += frame_score;
-    //   }
 
-    //   if (frame_complete) {
-    //       // Calculate carryover and update score for completed frame
-    //       std::vector<int> carryover(10, 0); // Initialize carryover vector to all zeros
-    //       frame_score = calculate_carryover(frames[current_frame - 1], carryover, current_frame - 1);
-    //       total_score += frame_score;
-    //       // Add carryover to previous frames
-    //       for (int i = current_frame - 2; i >= 0 && carryover[i] > 0; i--) {
-    //           total_score += carryover[i];
-    //       }
-    //       // Reset current ball and frame
-    //       current_ball = 1;
-    //       current_frame++;
-    //   } else {
-    //       // Update current ball
-    //       if (current_ball == 1 && num_pins < 10) {
-    //           current_ball++;
-    //       } else {
-    //           current_ball = 1;
-    //           current_frame++;
-    //       }
-    //   }
-    
-}
 
 int main() {
     Bowling::Player player("John");
@@ -177,8 +132,6 @@ int main() {
 
 
     // Print the frame data to the console
-
-    std::cout << "Frame: " << game.frames[1][0] << std::endl;
     std::cout << "Total Score: " << game.frames[1][2] << std::endl;
     std::cout << "Current Roll: " << game.get_curr_ball() << std::endl;
     std::cout << "Curr Frame: " << game.get_curr_frame() << std::endl;

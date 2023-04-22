@@ -1,0 +1,6 @@
+add_executable(test__exercise_01_threads
+  test__exercise_01_threads.cc
+)
+target_link_libraries(test__exercise_01_threads PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(test__exercise_01_threads PRIVATE pthread)
+

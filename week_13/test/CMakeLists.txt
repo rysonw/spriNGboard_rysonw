@@ -1,0 +1,4 @@
+add_subdirectory(exercise_01_threads)
+add_subdirectory(exercise_02_rcs)
+add_subdirectory(exercise_03_deadlock)
+

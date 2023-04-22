@@ -1,0 +1,6 @@
+add_executable(test__exercise_03_deadlock
+  test__exercise_03_deadlock.cc
+)
+target_link_libraries(test__exercise_03_deadlock PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(test__exercise_03_deadlock PRIVATE pthread)
+

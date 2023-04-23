@@ -11,7 +11,10 @@ void increment_counter (size_t & counter, std::mutex & counter_mutex, size_t num
 {
   for (size_t idx=0; idx<num_times; ++idx) {
     this_thread::sleep_for(1ms); // simluate a complicated calculation
-    counter++;
+    {
+      std::lock_guard<std::mutex> lock(counter_mutex);
+      counter++;
+    }
   }
 }
 

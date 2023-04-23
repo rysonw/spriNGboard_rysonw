@@ -24,8 +24,8 @@ void increment_counter_ver_2 (size_t & counter, std::mutex & mutex_a, std::mutex
   for (size_t idx=0; idx<num_times; ++idx) {
     this_thread::sleep_for(1ms); // simluate a complicated calculation
     {
-      lock_guard<std::mutex> lg_b(mutex_b);
       lock_guard<std::mutex> lg_a(mutex_a);
+      lock_guard<std::mutex> lg_b(mutex_b);
       counter++;
     }
   }

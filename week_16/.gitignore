@@ -1,0 +1,7 @@
+pyenv_versions/
+.python-version
+
+core.*
+
+*.pyc
+

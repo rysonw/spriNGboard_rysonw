@@ -1,0 +1,11 @@
+prefix=/home/kevin-test-01/analysis/230215_catch2/catch_install
+exec_prefix=${prefix}
+includedir=/home/kevin-test-01/analysis/230215_catch2/catch_install/include
+libdir=/home/kevin-test-01/analysis/230215_catch2/catch_install/lib64
+
+Name: Catch2
+Description: A modern, C++-native, test framework for C++14 and above
+URL: https://github.com/catchorg/Catch2
+Version: 3.3.1
+Cflags: -I${includedir}
+Libs: -L${libdir} -lCatch2

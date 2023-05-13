@@ -1,0 +1,17 @@
+# sudo yum update
+# restart workspace
+
+sudo yum install -y docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo service docker start
+
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+echo test commands:
+echo     newgrp docker             ## enable docker commands without sudo in current window
+echo     docker --version          ## installation/setup sanity check
+echo     docker-compose --version  ## installation/setup sanity check
+echo     docker run hello-world    ## check if containers work
+

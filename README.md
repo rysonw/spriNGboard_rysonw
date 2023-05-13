@@ -9,3 +9,5 @@ Week 6: Classes and Objects (Part Dos)  <br />
 Week 7: CMAKE and Code Style  <br />
 Week 8: Regression Testing and Refactoring  <br />
 Week 9: Unit Testing  <br />
+Week 10: Test Driven Development  <br />
+Week 13: Threads and Processes (Part Uno) <br />

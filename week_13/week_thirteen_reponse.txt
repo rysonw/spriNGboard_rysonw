@@ -1,72 +1,66 @@
-﻿Week 13: Threads, Processes, and Concurrency (Part 1)
+Week 13: Threads, Processes, and Concurrency (Part 1)
 Exercise #1: Threads
 Examine the code in:
 ./test/exercise_01_threads/test__exercise_01_threads.cc
 What do you think it will output when run?
 
-
 Response: First, the string “this will print before any letters” will be outputted to the console. Then, 100 a’s followed by 100 b’s followed by 100 c’s will be printed out by the threads. Finally, the string “this will print after all letters” will be outputted to the console.
-
 
 Build the repo.  From the ./build directory, run:
 ./test/exercise_01_threads/test__exercise_01_threads
-Does the output match your expectations?  Run the program several more times.  What do you notice?        
-
+Does the output match your expectations?  Run the program several more times.  What do you notice?	
 
 Response: After running the program once, the output was a little random after all the a’s were outputted. It seems that the b’s and c’s are intertwined and not outputted in a uniform fashion. After running the program several more times, I have concluded that the output is generally random. One thing that remained consistent is that the second string always starts with an “a”
 
-
 When execution reaches LINE A, how many threads are running?
-
 
 Response: 4 threads are running, the one executing the test case along with thread t_1, thread t_2, thread t_3
 
-
 Comment out one of the join() lines, recompile, and rerun the program.  What happened?  Why?  Run ls in the ./build directory.  What are those new files?  Uncomment the line.
-
 
 Response: It seems that an error has been thrown, more specifically the SIGABRT error. After some research, I believe it is due to the program not calling abort() directly. This would be due to one of the threads still be considered active because the program continues without waiting for that thread to finish executing, creating a detached thread.
 
-
 Assuming that we don’t care about the exact ordering of the letters, are there any problems with this code?
-
 
 Response: We should use joinable() instead of join, to make sure we do not run into any thread creation errors. We can also call flush after the thread has printed all its letters.
 Exercise #2: Race Conditions
 Examine the code in:
-        ./test/exercise_02_rcs/test__exercise_02_rcs.cc
-
+	./test/exercise_02_rcs/test__exercise_02_rcs.cc
 
 Why are counter and counter_mutex being passed by reference to the threads?
 
+Response: We pass by instance as both threads need access to the same instance of the counters.
 
 How long (approximately) will it take the test to run?  Will it pass?
 
+Response: It should take 3 seconds and I believe that is should pass as there are no race conditions.
 
 From the ./build directory, run:
-        time ./test/exercise_02_rcs/test__exercise_02_rcs
+	time ./test/exercise_02_rcs/test__exercise_02_rcs
 Do the outputs and times match your previous expectations?  Run the command several times.
 
+Response: It seems that the program ran to my expectations as the program was able to run without any runtime errors but it seems that the test did not pass because the incorrect value is not being returned. After running the program a couple of times, I have come to notice that the number being outputted is different every time. It looks to average in the high 2800s
 
 In increment_counter(), insert a lock_guard inside the for loop to protect the increment operation.  Rebuild and rerun the code.  Does the test pass?  How long does it take to run?
 
+Response: It seems that the program ran to my expectations as the program was able to run without any runtime errors but it seems that the test did not pass because the incorrect value is not being returned. After running the program a couple of times, I have come to notice that the number being outputted is different every time. It looks to average in the high 2800s
 
 Put the lock_guard and increment operations (only) inside a local scope block.  Recompile and rerun the code.  Does the test pass?  How long does it take to run?  What does this say about which code should be inside critical sections?
 
+Response: After making this addition, the test was able to pass. It took about 1.096 seconds to run. This taught me the valuable lesson of keeping critical sections as small as possible.
 
-Push your code (x1) and notes (x9) to your GitHub repo.
 Exercise #3: Deadlock
 Examine the code in:
-        ./test/exercise_03_deadlock/test__exercise_03_deadlock.cc
+	./test/exercise_03_deadlock/test__exercise_03_deadlock.cc
 Are there any concurrency issues in this code?
 
+Response: I think there is a deadlock between these threads increment_counter_ver_1 and increment_counter_ver_2. Both threads would be waiting for the other thread to release their resource causing a deadlock.
 
 From the ./build directory, run:
-        ./test/exercise_03_deadlock/test__exercise_03_deadlock
+	./test/exercise_03_deadlock/test__exercise_03_deadlock
 What happens?  Why?
 
+Response: After running the program, the program stalled and I was forced to force quit the program.
 
 Fix the code.
 
-
-Push your code (x1) and notes (x3) to your GitHub repo.
